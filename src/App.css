@@ -1,0 +1,235 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Lato", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a,
+a:hover,
+a:focus,
+a:active {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* general CTA                 button settings  */
+
+.create-offer,
+.hero-card button {
+  border: 1px solid #09b1ba;
+  background-color: #09b1ba;
+  color: white;
+}
+
+header {
+  width: 80%;
+  margin: 0 auto;
+}
+
+/* create a primary nav, flex it so we have our left and right part */
+
+.primary-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+}
+
+.header-logo {
+  width: 80px;
+  margin-right: 40px;
+  cursor: pointer;
+}
+
+/* flex on the left-nav container so we can center the input */
+
+.left-nav {
+  display: flex;
+  align-items: center;
+}
+
+.searchbar {
+  border: none;
+}
+
+.right-nav {
+  display: flex;
+}
+
+.right-nav button {
+  margin-left: 15px;
+  padding: 8px 12px;
+  border-radius: 5px;
+}
+
+.right-nav button:nth-child(2) {
+  margin-right: 40px;
+}
+
+.signup,
+.login {
+  background-color: white;
+  border: 1px solid #09b1ba;
+  color: #09b1ba;
+}
+
+/* hero banner */
+
+.hero-banner img {
+  width: 100%;
+  height: 60vh;
+  object-fit: cover;
+  position: relative;
+}
+
+.hero-card {
+  position: absolute;
+  padding: 50px 20px;
+  width: 350px;
+  top: 150px;
+  left: 100px;
+  background-color: white;
+}
+
+.hero-card h1 {
+  margin-bottom: 25px;
+}
+
+.hero-card button {
+  padding: 13px 20px;
+  border-radius: 5px;
+}
+
+/* offers */
+
+.offers-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 80%;
+  margin: 20px auto;
+  gap: 15px;
+}
+
+.offer-container {
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.user-offer {
+  display: flex;
+  align-items: center;
+  margin: 0 0 10px 10px;
+}
+
+.user-offer img {
+  width: 20px;
+  height: 20px;
+  border-radius: 1000px;
+  margin-right: 7px;
+}
+
+.offer-product-img {
+  width: 220px;
+  height: 360px;
+}
+
+.offer-product-infos {
+  display: flex;
+  flex-direction: column;
+}
+
+.offer-account-username,
+.offer-product-size,
+.offer-product-brand {
+  font-size: 0.7rem;
+  font-weight: 300;
+}
+
+/* Offer */
+
+main {
+  background: rgb(218, 218, 218);
+  height: 100vh;
+}
+
+.product-page-container {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.product-page-img {
+  margin: 20px 0 0 0;
+  width: 400px;
+}
+
+.product-page-left-container {
+  margin-top: 20px;
+  padding: 40px 30px;
+  background-color: white;
+  width: 400px;
+}
+
+.product-page-price {
+  margin-bottom: 25px;
+  font-size: 1.4rem;
+}
+
+.product-info-brand,
+.product-info-size,
+.product-info-condition,
+.product-info-color,
+.product-info-location {
+  display: flex;
+  justify-content: space-between;
+}
+.info-brand,
+.info-size,
+.info-condition,
+.info-color,
+.info-location,
+.product-page-description {
+  color: rgb(158, 158, 158);
+}
+
+.product-page-product-infos {
+  margin-bottom: 60px;
+}
+
+.product-user-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 1000px;
+  margin-right: 10px;
+}
+
+.product-page-user {
+  display: flex;
+  align-items: center;
+}
+
+.product-page-name {
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.product-page-description {
+  margin-bottom: 20px;
+}
+
+.product-page-atc {
+  margin-top: 80px;
+  width: 100%;
+  padding: 8px 0;
+  border-radius: 4px;
+  border: 1px solid #09b1ba;
+  background-color: #09b1ba;
+  color: white;
+}
