@@ -3,7 +3,6 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import Header from "../components/Header";
 import "react-multi-carousel";
-import Carousel from "react-multi-carousel";
 
 const Offer = () => {
   const [data, setData] = useState({});
@@ -22,7 +21,7 @@ const Offer = () => {
       }
     };
     fetchData();
-  }, []);
+  });
 
   return isLoading ? (
     <div></div>
