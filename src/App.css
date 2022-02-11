@@ -18,6 +18,12 @@ button {
   cursor: pointer;
 }
 
+/* general settings */
+
+ul {
+  list-style: none;
+}
+
 /* general CTA                 button settings  */
 
 .create-offer,
@@ -27,7 +33,9 @@ button {
   color: white;
 }
 
-header {
+.header-wrapper {
+  display: flex;
+  justify-content: space-between;
   width: 80%;
   margin: 0 auto;
 }
@@ -36,7 +44,6 @@ header {
 
 .primary-nav {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   height: 70px;
 }
@@ -45,6 +52,26 @@ header {
   width: 80px;
   margin-right: 40px;
   cursor: pointer;
+}
+
+.primary-nav,
+.secondary-nav {
+  width: 100%;
+  border-bottom: 1px solid #dadada;
+}
+
+.secondary-nav ul {
+  display: flex;
+}
+
+.secondary-nav {
+  margin-bottom: 20px;
+}
+
+.secondary-nav ul li {
+  margin: 10px 5px;
+  font-size: 0.9rem;
+  color: gray;
 }
 
 /* flex on the left-nav container so we can center the input */
@@ -56,6 +83,10 @@ header {
 
 .searchbar {
   border: none;
+  background-color: #e4e4e4;
+  border-radius: 2px;
+  padding: 7px 0;
+  width: 300px;
 }
 
 .right-nav {
@@ -232,4 +263,100 @@ main {
   border: 1px solid #09b1ba;
   background-color: #09b1ba;
   color: white;
+}
+
+/* signup form */
+
+.signup-form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 350px;
+  margin: 0 auto;
+  border: 1px solid #ebebeb;
+  padding: 25px 30px;
+}
+
+.signup-form-container h1 {
+  margin-bottom: 25px;
+  font-size: 1.5rem;
+}
+.signup-form-container h3 {
+  font-size: 1rem;
+  color: grey;
+}
+
+.gdpr-container,
+.newsletter-container {
+  display: flex;
+  align-items: baseline;
+  margin-bottom: 20px;
+}
+
+.newsletter-container,
+.gdpr-container {
+  width: 100%;
+  margin-left: 20px;
+}
+
+.gdpr-checkbox-input,
+.signup-checkbox-input {
+  margin-right: 10px;
+}
+
+.gdpr-container p {
+  color: gray;
+}
+
+.signup-user-input,
+.signup-email-input,
+.signup-password-input {
+  border: none;
+  border-bottom: 1px solid #ebebeb;
+  outline: none;
+  margin-bottom: 20px;
+  width: 100%;
+  border-width: 1px;
+  font-size: 1rem;
+}
+
+.signup-form-container input[type="text"],
+.signup-form-container input[type="email"],
+.signup-form-container input[type="password"] {
+  padding-bottom: 10px;
+  padding-right: 10px;
+}
+
+input[type="checkbox"] {
+  -ms-transform: scale(1.8);
+  -moz-transform: scale(1.8);
+  -webkit-transform: scale(1.8);
+  -o-transform: scale(1.8);
+}
+
+.signup-password-input {
+  margin-bottom: 15px;
+}
+
+.newsletter-intro input {
+  margin-right: 10px;
+}
+
+.signup-submit-input {
+  width: 100%;
+  padding: 8px 0;
+  border-radius: 4px;
+  border: 1px solid #09b1ba;
+  background-color: #09b1ba;
+  color: white;
+  margin-bottom: 15px;
+}
+
+.already-registered {
+  color: #09b1ba;
+  cursor: pointer;
+}
+.already-registered:hover {
+  text-decoration: underline;
 }

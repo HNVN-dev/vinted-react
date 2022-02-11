@@ -6,7 +6,6 @@ import { Link } from "react-router-dom";
 const Offer = () => {
   const [data, setData] = useState({});
   const [isLoading, setIsLoading] = useState(true);
-  const [product, setProduct] = useState([]);
 
   const fetchData = async () => {
     try {

@@ -1,7 +1,8 @@
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import Home from "./pages/Home";
-import Offer from "./pages/Offer";
+import Home from "./containers/Home";
+import Offer from "./containers/Offer";
+import Signup from "./containers/Signup";
 import { useParams } from "react-router-dom";
 
 function App() {
@@ -10,6 +11,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/offer/:id" element={<Offer />} />
+        <Route path="/signup" element={<Signup />} />
       </Routes>
     </Router>
   );
