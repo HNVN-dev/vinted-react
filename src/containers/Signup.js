@@ -10,16 +10,17 @@ const Signup = () => {
   const [password, setPassword] = useState("");
   const [newsletter, setNewsletter] = useState(false);
   const navigate = useNavigate();
+
   const handleSubmit = async (event) => {
     try {
       event.preventDefault();
       const response = await axios.post(
         "https://lereacteur-vinted-api.herokuapp.com/user/signup",
         {
-          username,
-          email,
-          password,
-          newsletter,
+          username: username,
+          email: email,
+          password: password,
+          newsletter: newsletter,
         }
       );
       Cookies.set("userToken", response.data.token, { expires: 30 });

@@ -14,7 +14,8 @@ a:active {
   color: inherit;
 }
 
-button {
+button,
+input[type="submit"] {
   cursor: pointer;
 }
 
@@ -79,7 +80,7 @@ ul {
 
 .searchbar {
   border: none;
-  background-color: #e4e4e4;
+  background-color: #d6d6d642;
   border-radius: 2px;
   padding: 7px 0;
   width: 300px;
