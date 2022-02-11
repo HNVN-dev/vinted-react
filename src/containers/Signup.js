@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 import Header from "../components/Header";
+import Footer from "../components/Footer";
 import Cookies from "js-cookie";
 import { useNavigate } from "react-router-dom";
 
@@ -98,6 +99,7 @@ const Signup = () => {
           <div className="already-registered">Besoin d'aide ?</div>
         </div>
       </form>
+      <Footer />
     </>
   );
 };

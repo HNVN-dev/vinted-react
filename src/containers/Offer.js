@@ -2,7 +2,6 @@ import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import Header from "../components/Header";
-import "react-multi-carousel";
 
 const Offer = () => {
   const [data, setData] = useState({});
@@ -15,13 +14,14 @@ const Offer = () => {
           `https://lereacteur-vinted-api.herokuapp.com/offer/${id}`
         );
         setData(response.data);
+        console.log(data);
         setIsLoading(false);
       } catch (error) {
         console.log(error.response);
       }
     };
     fetchData();
-  });
+  }, [id]);
 
   return isLoading ? (
     <div></div>
@@ -39,26 +39,14 @@ const Offer = () => {
           <div className="product-page-left-container">
             <div className="product-page-price">{data.product_price} €</div>
             <div className="product-page-product-infos">
-              <div className="product-info-brand">
-                <div className="info-brand">MARQUE</div>
-                {data.product_details[0]["MARQUE"]}
-              </div>
-              <div className="product-info-size">
-                <div className="info-size">TAILLE</div>
-                {data.product_details[1]["TAILLE"]}
-              </div>
-              <div className="product-info-condition">
-                <div className="info-condition">ÉTAT</div>
-                {data.product_details[2]["ÉTAT"]}
-              </div>
-              <div className="product-info-color">
-                <div className="info-color">COULEUR</div>
-                {data.product_details[3]["COULEUR"]}
-              </div>
-              <div className="product-info-location">
-                <div className="info-location">EMPLACEMENT</div>
-                {data.product_details[4]["EMPLACEMENT"]}
-              </div>
+              {data.product_details.map((elem, index) => {
+                const keys = Object.keys(elem);
+                return (
+                  <div className="product-info-line">
+                    <div>{keys[0]}</div> <div>{elem[keys[0]]}</div>
+                  </div>
+                );
+              })}
             </div>
             <div className="bottom-page-product">
               <div className="product-page-name">{data.product_name}</div>

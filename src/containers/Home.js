@@ -1,6 +1,7 @@
 import Header from "../components/Header";
 import Offer from "./Offers";
 import herobanner from "../assets/img/vinted-home-baner-wide.jpeg";
+import Footer from "../components/Footer";
 
 const Home = () => {
   return (
@@ -14,6 +15,7 @@ const Home = () => {
         </div>
       </section>
       <Offer />
+      <Footer />
     </>
   );
 };
