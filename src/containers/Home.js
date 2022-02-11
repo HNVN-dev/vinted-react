@@ -3,7 +3,6 @@ import Offer from "./Offers";
 import herobanner from "../assets/img/vinted-home-baner-wide.jpeg";
 
 const Home = () => {
-  const id = "31940101239";
   return (
     <>
       <Header />
