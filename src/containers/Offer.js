@@ -8,18 +8,8 @@ import Carousel from "react-multi-carousel";
 const Offer = () => {
   const [data, setData] = useState({});
   const [isLoading, setIsLoading] = useState(true);
-
-  console.log(data);
-
-  const responsive = {
-    desktop: {
-      breakpoint: { max: 300, min: 300 },
-      items: 3,
-    },
-  };
-
+  const { id } = useParams();
   useEffect(() => {
-    const { id } = useParams();
     const fetchData = async () => {
       try {
         const response = await axios.get(
