@@ -1,13 +1,15 @@
 import axios from "axios";
 import { useState } from "react";
 import Header from "../components/Header";
+import Cookies from "js-cookie";
+import { useNavigate } from "react-router-dom";
 
 const Signup = () => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [newsletter, setNewsletter] = useState(false);
-
+  const navigate = useNavigate();
   const handleSubmit = async (event) => {
     try {
       event.preventDefault();
@@ -20,6 +22,9 @@ const Signup = () => {
           newsletter,
         }
       );
+      Cookies.set("userToken", response.data.token, { expires: 30 });
+      console.log(Cookies.get("userToken"));
+      navigate("/");
     } catch (error) {
       console.log(error.response);
     }
