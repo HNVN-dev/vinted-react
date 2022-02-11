@@ -11,8 +11,6 @@ const Offer = () => {
 
   console.log(data);
 
-  const { id } = useParams();
-
   const responsive = {
     desktop: {
       breakpoint: { max: 300, min: 300 },
@@ -21,6 +19,7 @@ const Offer = () => {
   };
 
   useEffect(() => {
+    const { id } = useParams();
     const fetchData = async () => {
       try {
         const response = await axios.get(
