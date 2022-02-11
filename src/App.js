@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Home from "./containers/Home";
 import Offer from "./containers/Offer";
 import Signup from "./containers/Signup";
-import { useParams } from "react-router-dom";
 
 function App() {
   return (

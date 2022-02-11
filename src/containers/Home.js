@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import Header from "../components/Header";
 import Offer from "./Offers";
 import herobanner from "../assets/img/vinted-home-baner-wide.jpeg";
