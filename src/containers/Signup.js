@@ -11,12 +11,15 @@ const Signup = () => {
   const handleSubmit = async (event) => {
     try {
       event.preventDefault();
-      axios.post("https://lereacteur-vinted-api.herokuapp.com/user/signup", {
-        username,
-        email,
-        password,
-        newsletter,
-      });
+      const response = await axios.post(
+        "https://lereacteur-vinted-api.herokuapp.com/user/signup",
+        {
+          username,
+          email,
+          password,
+          newsletter,
+        }
+      );
     } catch (error) {
       console.log(error.response);
     }
