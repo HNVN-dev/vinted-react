@@ -30,15 +30,15 @@ const Signup = () => {
     }
   };
 
-  const handleSetUsername = (event) => {
+  const handleUsernameTyping = (event) => {
     const value = event.target.value;
     setUsername(value);
   };
-  const handleSetEmail = (event) => {
+  const handleEmailTyping = (event) => {
     const value = event.target.value;
     setEmail(value);
   };
-  const handleSetPassword = (event) => {
+  const handlePasswordTyping = (event) => {
     const value = event.target.value;
     setPassword(value);
   };
@@ -57,7 +57,7 @@ const Signup = () => {
             value={username}
             type="text"
             placeholder="Nom d'utilisateur"
-            onChange={handleSetUsername}
+            onChange={handleUsernameTyping}
           />
 
           <input
@@ -65,14 +65,14 @@ const Signup = () => {
             type="email"
             value={email}
             placeholder="Email"
-            onChange={handleSetEmail}
+            onChange={handleEmailTyping}
           />
           <input
             className="signup-password-input"
             type="password"
             value={password}
             placeholder="Mot de passe"
-            onChange={handleSetPassword}
+            onChange={handlePasswordTyping}
           />
 
           <div className="newsletter-container">

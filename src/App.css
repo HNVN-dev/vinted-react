@@ -64,10 +64,6 @@ ul {
   display: flex;
 }
 
-.secondary-nav {
-  margin-bottom: 20px;
-}
-
 .secondary-nav ul li {
   margin: 10px 5px;
   font-size: 0.9rem;
@@ -273,7 +269,7 @@ main {
   justify-content: center;
   align-items: center;
   width: 350px;
-  margin: 0 auto;
+  margin: 20px auto;
   border: 1px solid #ebebeb;
   padding: 25px 30px;
 }
@@ -309,6 +305,9 @@ main {
   color: gray;
 }
 
+.login-user-input,
+.login-email-input,
+.login-password-input,
 .signup-user-input,
 .signup-email-input,
 .signup-password-input {
@@ -320,7 +319,8 @@ main {
   border-width: 1px;
   font-size: 1rem;
 }
-
+.login-form-container input[type="email"],
+.login-form-container input[type="password"],
 .signup-form-container input[type="text"],
 .signup-form-container input[type="email"],
 .signup-form-container input[type="password"] {
@@ -343,6 +343,7 @@ input[type="checkbox"] {
   margin-right: 10px;
 }
 
+.login-submit-input,
 .signup-submit-input {
   width: 100%;
   padding: 8px 0;
@@ -350,13 +351,35 @@ input[type="checkbox"] {
   border: 1px solid #09b1ba;
   background-color: #09b1ba;
   color: white;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 
+.password-forgotten,
+.a-problem,
 .already-registered {
   color: #09b1ba;
   cursor: pointer;
 }
 .already-registered:hover {
   text-decoration: underline;
+}
+
+.login-form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 350px;
+  margin: 20px auto;
+  border: 1px solid #ebebeb;
+  padding: 25px 30px;
+}
+
+.login-form-container h1 {
+  margin-bottom: 25px;
+  font-size: 1.5rem;
+}
+
+.password-forgotten {
+  margin-bottom: 15px;
 }
