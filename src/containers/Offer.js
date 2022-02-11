@@ -36,15 +36,7 @@ const Offer = () => {
             alt=""
             className="product-page-img"
           />
-          <Carousel responsive={responsive}>
-            {data.product_pictures.map((picture, index) => {
-              return (
-                <div className="product-page-carousel">
-                  <img src={picture.secure_url} alt="" />
-                </div>
-              );
-            })}
-          </Carousel>
+
           <div className="product-page-left-container">
             <div className="product-page-price">{data.product_price} €</div>
             <div className="product-page-product-infos">
