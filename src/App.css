@@ -206,7 +206,7 @@ footer ul li {
 
 main {
   background: rgb(218, 218, 218);
-  height: 100vw;
+  height: 100vh;
 }
 
 .product-page-container {
@@ -220,6 +220,7 @@ main {
   margin: 20px 0 0 0;
   width: 400px;
   height: 600px;
+  object-fit: cover;
 }
 
 .product-page-left-container {
@@ -392,6 +393,11 @@ input[type="checkbox"] {
 .login-form-container h1 {
   margin-bottom: 25px;
   font-size: 1.5rem;
+}
+
+.error-message {
+  color: #f03e53;
+  margin-bottom: 20px;
 }
 
 .password-forgotten {

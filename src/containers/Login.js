@@ -1,21 +1,21 @@
-import Cookies from "js-cookie";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
-import axios from "axios";
-import Header from "../components/Header";
 
-const Login = () => {
+import axios from "axios";
+
+const Login = ({ setUser }) => {
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
+
+  const navigate = useNavigate;
 
   const handleEmailTyping = (event) => {
-    const value = event.target.value;
-    setEmail(value);
+    setEmail(event.target.value);
   };
 
   const handlePasswordTyping = (event) => {
-    const value = event.target.value;
-    setPassword(value);
+    setPassword(event.target.value);
   };
 
   const handleSubmit = async (event) => {
@@ -23,45 +23,49 @@ const Login = () => {
       event.preventDefault();
       const response = await axios.post(
         "https://lereacteur-vinted-api.herokuapp.com/user/login",
-        { email: email, password: password }
+        { email, password }
+        // email: email, password: password
       );
-      Cookies.set("userToken", response.data.token, { expires: 30 });
-      console.log(Cookies.get("userToken"));
+      if (response.data.token) {
+        setUser(response.data.token);
+        navigate("/");
+      }
     } catch (error) {
-      alert(error.response);
+      console.log(error.message);
+      console.log(error.response); // going deeper in the error message
+      if (error.response.status === 400 || error.response.status === 401) {
+        setErrorMessage("Identifiant ou mot de passe incorrect");
+      }
     }
   };
 
   return (
-    <>
-      <Header />
-      <form onSubmit={handleSubmit}>
-        <div className="login-form-container">
-          <h1>Se connecter</h1>
+    <form onSubmit={handleSubmit}>
+      <div className="login-form-container">
+        <h1>Se connecter</h1>
+        <span className="error-message">{errorMessage}</span>
+        <input
+          className="login-email-input"
+          type="email"
+          placeholder="Adresse email"
+          onChange={handleEmailTyping}
+        />
+        <input
+          className="login-password-input"
+          type="password"
+          placeholder="Mot de passe"
+          onChange={handlePasswordTyping}
+        />
+        <input className="login-submit-input" type="submit" />
 
-          <input
-            className="login-email-input"
-            type="email"
-            placeholder="Adresse email"
-            onChange={handleEmailTyping}
-          />
-          <input
-            className="login-password-input"
-            type="password"
-            placeholder="Mot de passe"
-            onChange={handlePasswordTyping}
-          />
-          <input className="login-submit-input" type="submit" />
-
-          <Link to="/signup" className="link-signup">
-            <div className="password-forgotten">
-              J'ai oublié mon mot de passe
-            </div>
+        <Link to="/signup" className="link-signup">
+          <div className="password-forgotten">J'ai oublié mon mot de passe</div>
+          <Link to="*">
             <div className="a-problem">Un problème ?</div>
           </Link>
-        </div>
-      </form>
-    </>
+        </Link>
+      </div>
+    </form>
   );
 };
 

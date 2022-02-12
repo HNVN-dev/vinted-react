@@ -1,12 +1,9 @@
-import Header from "../components/Header";
 import Offer from "./Offers";
 import herobanner from "../assets/img/vinted-home-baner-wide.jpeg";
-import Footer from "../components/Footer";
 
 const Home = () => {
   return (
     <>
-      <Header />
       <section className="hero-banner">
         <img src={herobanner} alt="" />
         <div className="hero-card">
@@ -15,7 +12,6 @@ const Home = () => {
         </div>
       </section>
       <Offer />
-      <Footer />
     </>
   );
 };

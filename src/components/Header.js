@@ -1,5 +1,6 @@
 import logo from "../assets/img/Vinted_logo.png";
 import { Link } from "react-router-dom";
+import Isloggin from "./Isloggin";
 
 const Header = () => {
   return (
@@ -10,15 +11,11 @@ const Header = () => {
             <Link to="/">
               <img src={logo} alt="vinted logo" className="header-logo" />{" "}
             </Link>
+
             <input className="searchbar" type="text" />
           </div>
           <div className="right-nav">
-            <Link to="/signup">
-              <button className="signup">S'inscrire</button>
-            </Link>
-            <Link to="/login">
-              <button className="login">Se connecter</button>
-            </Link>
+            <Isloggin />
             <button className="create-offer">Vends tes articles</button>
           </div>
         </div>
