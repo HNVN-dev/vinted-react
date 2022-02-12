@@ -2,7 +2,7 @@ import logo from "../assets/img/Vinted_logo.png";
 import { Link } from "react-router-dom";
 import Isloggin from "./Isloggin";
 
-const Header = () => {
+const Header = ({ token }) => {
   return (
     <header>
       <nav className="primary-nav">
@@ -15,7 +15,7 @@ const Header = () => {
             <input className="searchbar" type="text" />
           </div>
           <div className="right-nav">
-            <Isloggin />
+            <Isloggin token={token} />
             <button className="create-offer">Vends tes articles</button>
           </div>
         </div>

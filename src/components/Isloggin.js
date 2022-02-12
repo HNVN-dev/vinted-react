@@ -4,10 +4,10 @@ import { Link } from "react-router-dom";
 const Isloggin = ({ token, setUser }) => {
   return token ? (
     <>
-      <FontAwesomeIcon icon="fa-regular fa-envelope" />
-      <FontAwesomeIcon icon="fa-regular fa-bell" />
-      <FontAwesomeIcon icon="fa-regular fa-heart" />
-      <FontAwesomeIcon icon="fa-regular fa-user" />
+      <FontAwesomeIcon icon="envelope" />
+      <FontAwesomeIcon icon="bell" />
+      <FontAwesomeIcon icon="heart" />
+      <FontAwesomeIcon icon="user" />
     </>
   ) : (
     <>
