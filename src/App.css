@@ -6,6 +6,30 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icons-container {
+  display: flex;
+}
+
+.user-svg,
+.bell-svg,
+.envelope-svg,
+.heart-svg {
+  width: 30px;
+  size: 30px;
+  filter: opacity(25%);
+}
+
+.bell-svg,
+.envelope-svg,
+.heart-svg {
+  margin-right: 20px;
+}
+
+.user-svg {
+  width: 35px;
+  margin: 0 10px 0 15px;
+}
+
 a,
 a:hover,
 a:focus,

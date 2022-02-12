@@ -4,15 +4,6 @@ import { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Cookies from "js-cookie";
 
-import { library } from "@fortawesome/fontawesome-svg-core";
-import {
-  faMagnifyingGlass,
-  faEnvelope,
-  faBell,
-  faHeart,
-  faUser,
-} from "@fortawesome/free-solid-svg-icons";
-
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Home from "./containers/Home";
@@ -22,7 +13,6 @@ import Login from "./containers/Login";
 
 function App() {
   const [token, setToken] = useState(Cookies.get("userToken") || null);
-  library.add(faMagnifyingGlass, faEnvelope, faBell, faHeart, faUser);
 
   const setUser = (token) => {
     if (token) {
