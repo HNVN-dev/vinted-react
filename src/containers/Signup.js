@@ -17,10 +17,10 @@ const Signup = ({ setUser }) => {
       const response = await axios.post(
         "https://lereacteur-vinted-api.herokuapp.com/user/signup",
         {
-          username,
-          email,
-          password,
-          newsletter,
+          email: email,
+          username: username,
+          password: password,
+          newsletter: newsletter,
         }
       );
       if (response.data.token) {
@@ -54,13 +54,6 @@ const Signup = ({ setUser }) => {
       <div className="signup-form-container">
         <h1>S'inscrire</h1>
         <span>{errorMessage}</span>
-        <input
-          className="signup-user-input"
-          value={username}
-          type="text"
-          placeholder="Nom d'utilisateur"
-          onChange={handleUsernameTyping}
-        />
 
         <input
           className="signup-email-input"
@@ -69,6 +62,15 @@ const Signup = ({ setUser }) => {
           placeholder="Email"
           onChange={handleEmailTyping}
         />
+
+        <input
+          className="signup-user-input"
+          value={username}
+          type="text"
+          placeholder="Nom d'utilisateur"
+          onChange={handleUsernameTyping}
+        />
+
         <input
           className="signup-password-input"
           type="password"

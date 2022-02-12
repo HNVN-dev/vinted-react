@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
 import axios from "axios";
@@ -8,7 +8,7 @@ const Login = ({ setUser }) => {
   const [email, setEmail] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
 
-  const navigate = useNavigate;
+  const navigate = useNavigate();
 
   const handleEmailTyping = (event) => {
     setEmail(event.target.value);
@@ -58,12 +58,9 @@ const Login = ({ setUser }) => {
         />
         <input className="login-submit-input" type="submit" />
 
-        <Link to="/signup" className="link-signup">
-          <div className="password-forgotten">J'ai oublié mon mot de passe</div>
-          <Link to="*">
-            <div className="a-problem">Un problème ?</div>
-          </Link>
-        </Link>
+        <div className="password-forgotten">J'ai oublié mon mot de passe</div>
+
+        <div className="a-problem">Un problème ?</div>
       </div>
     </form>
   );
