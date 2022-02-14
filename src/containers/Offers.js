@@ -28,7 +28,8 @@ const Offer = () => {
     <section className="offers-container">
       {data.offers.map((elem) => {
         return (
-          elem.product_details[1]["TAILLE"] && (
+          elem.product_details[1]["TAILLE"] &&
+          elem.owner.account.avatar?.secure_url && (
             /* we only wants to return elem with TAILLE property
              Some elem doesn't have it and we wants a harmonious feed */
 
@@ -43,9 +44,10 @@ const Offer = () => {
                 </div>
               </div>
               <Link key={elem._id} to={`/offer/${elem._id}`}>
+                {console.log(elem)}
                 <img
                   className="offer-product-img"
-                  src={elem.product_pictures[0].secure_url}
+                  src={elem.product_image.secure_url}
                   alt={`${elem.product_name}`}
                 />
               </Link>

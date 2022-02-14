@@ -26,7 +26,7 @@ function App() {
   };
   return (
     <Router>
-      <Header setuser={setUser} token={token} />
+      <Header setUser={setUser} token={token} setToken={setToken} />
       <Routes>
         <Route path="*" />
         <Route path="/" element={<Home />} />

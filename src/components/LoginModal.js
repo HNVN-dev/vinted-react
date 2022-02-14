@@ -3,7 +3,9 @@ import { useState } from "react";
 
 import axios from "axios";
 
-const Login = ({ setUser }) => {
+const LoginModal = ({ setUser, closeLoginModal }) => {
+  // in guest.js, props passed in Header
+
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
@@ -28,6 +30,7 @@ const Login = ({ setUser }) => {
       );
       if (response.data.token) {
         setUser(response.data.token);
+        closeLoginModal();
         navigate("/");
       }
     } catch (error) {
@@ -42,6 +45,9 @@ const Login = ({ setUser }) => {
   return (
     <form onSubmit={handleSubmit}>
       <div className="login-form-container">
+        <button className="close-btn" onClick={closeLoginModal}>
+          X
+        </button>
         <h1>Se connecter</h1>
         <span className="error-message">{errorMessage}</span>
         <input
@@ -66,4 +72,4 @@ const Login = ({ setUser }) => {
   );
 };
 
-export default Login;
+export default LoginModal;
