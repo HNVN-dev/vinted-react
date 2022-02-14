@@ -50,7 +50,9 @@ const Header = ({ token, setToken, setUser }) => {
                 token={token}
               />
             )}
-            <button className="create-offer">Vends tes articles</button>
+            <Link to="/publish">
+              <button className="publish">Vends tes articles</button>{" "}
+            </Link>
           </div>
         </div>
       </nav>
