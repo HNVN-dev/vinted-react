@@ -283,7 +283,8 @@ li {
 .product-page-container {
   display: flex;
   justify-content: space-between;
-  width: 80%;
+  /* width: 80%; */
+  width: 1280px;
   margin: 0 auto;
 }
 
@@ -501,7 +502,7 @@ input[type="checkbox"] {
 .connexion-modal {
   position: absolute;
   top: 60px;
-  right: 28.5%;
+  right: 20%;
   width: 220px;
   padding: 10px 15px;
   background-color: var(--mainWhite);
