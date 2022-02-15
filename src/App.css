@@ -232,6 +232,7 @@ li {
   display: flex;
   flex-wrap: wrap;
   width: 60%;
+  max-width: 1440px;
   margin: 20px auto;
   gap: 15px;
 }
