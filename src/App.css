@@ -29,8 +29,8 @@ main {
 /* Footer */
 
 footer {
-  /* width: 60%; */
-  width: 1280px;
+  width: 60%;
+
   margin: 0 auto;
   border-top: 1px solid #dadada;
   position: absolute;
@@ -109,9 +109,8 @@ li {
 .header-wrapper {
   display: flex;
   justify-content: space-between;
-  /* max-width: 1440px;
-  width: 60%; */
-  width: 1280px;
+  max-width: 1440px;
+  width: 60%;
   margin: 0 auto;
 }
 
@@ -232,8 +231,8 @@ li {
 .offers-container {
   display: flex;
   flex-wrap: wrap;
-  /* width: 60%; */
-  width: 1280px;
+  width: 60%;
+
   margin: 20px auto;
   gap: 15px;
 }
@@ -283,8 +282,7 @@ li {
 .product-page-container {
   display: flex;
   justify-content: space-between;
-  /* width: 80%; */
-  width: 1280px;
+  width: 80%;
   margin: 0 auto;
 }
 
@@ -502,7 +500,7 @@ input[type="checkbox"] {
 .connexion-modal {
   position: absolute;
   top: 60px;
-  right: 20%;
+  right: 29.5%;
   width: 220px;
   padding: 10px 15px;
   background-color: var(--mainWhite);
