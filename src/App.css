@@ -673,11 +673,136 @@ input[type="checkbox"] {
   margin: 0 auto;
   background-color: var(--mainWhite);
   width: 60%;
+  height: 100%;
 }
 
 .publish-container h2 {
   justify-content: flex-start;
   margin: 20px 0;
+}
+
+.title-description-container,
+.brand-to-city-container {
+  margin: 20px 0;
+}
+
+.file-select,
+.file-select-border,
+.title-description-container,
+.publish-price-exchange,
+.publish-title,
+.publish-description,
+.publish-brand,
+.publish-size,
+.publish-color,
+.publish-condition,
+.publish-city {
+  border: 1px solid #f5f5f5;
+}
+
+.file-select {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  height: 100%;
+  width: 100%;
+}
+.file-select-border {
+  margin: 40px;
+  padding: 100px;
+  width: 700px;
+}
+
+.file-select-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  border: 1px solid var(--mainTurquoise);
+  color: var(--mainTurquoise);
+  width: 300px;
+  border-radius: 5px;
+  margin: 0 auto;
+}
+
+.add-file {
+  margin-right: 20px;
+}
+
+.file-select label {
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+
+.file-select input {
+  display: none;
+}
+
+.publish-price-exchange {
+  width: 100%;
+}
+
+.publish-title,
+.publish-description,
+.publish-brand,
+.publish-size,
+.publish-color,
+.publish-condition,
+.publish-city,
+.publish-price {
+  display: flex;
+  justify-content: space-between;
+  padding: 25px;
+}
+
+.publish-title input,
+.publish-description textarea,
+.publish-brand input,
+.publish-size input,
+.publish-color input,
+.publish-condition input,
+.publish-city input,
+.publish-price input {
+  width: 40%;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid var(--border);
+}
+
+.publish-exchange {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 40px;
+}
+
+.publish-exchange span {
+  width: 38%;
+}
+.publish-exchange input {
+  margin-right: 15px;
+}
+
+.publish-price-exchange {
+  margin-bottom: 20px;
+}
+
+.btn-publish-submit-wrapper {
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+}
+
+.publish-btn {
+  justify-content: flex-end;
+  margin-bottom: 40px;
+  border-radius: 5px;
+  padding: 10px 20px;
+  margin-right: 20px;
+  width: 200px;
+  color: var(--mainTurquoise);
+  background-color: var(--mainWhite);
+  border: 1px solid var(--mainTurquoise);
 }
 
 /* Checkout : Checkoutform */
