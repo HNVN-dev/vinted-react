@@ -1,4 +1,5 @@
 const Footer = () => {
+  // Called in App.js
   return (
     <footer>
       <ul>

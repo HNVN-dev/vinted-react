@@ -3,8 +3,8 @@ import { useState } from "react";
 
 import axios from "axios";
 
-const LoginModal = ({ setUser, closeLoginModal }) => {
-  // in guest.js, props passed in Header
+const LoginModal = ({ setUser, closeAndClose, openOrClose }) => {
+  // called in Guest.js, props passed in Header.js
 
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
@@ -30,7 +30,7 @@ const LoginModal = ({ setUser, closeLoginModal }) => {
       );
       if (response.data.token) {
         setUser(response.data.token);
-        closeLoginModal();
+        closeAndClose();
         navigate("/");
       }
     } catch (error) {
@@ -45,9 +45,6 @@ const LoginModal = ({ setUser, closeLoginModal }) => {
   return (
     <form onSubmit={handleSubmit}>
       <div className="login-form-container">
-        <button className="close-btn" onClick={closeLoginModal}>
-          X
-        </button>
         <h1>Se connecter</h1>
         <span className="error-message">{errorMessage}</span>
         <input
@@ -67,6 +64,14 @@ const LoginModal = ({ setUser, closeLoginModal }) => {
         <div className="password-forgotten">J'ai oublié mon mot de passe</div>
 
         <div className="a-problem">Un problème ?</div>
+        <button className="close-btn-absolute" onClick={closeAndClose}>
+          X
+        </button>
+        {/* the button is here because the nearest button will hold the keypress
+ So the user can validate the form by pressing "Enter". 
+ If we let the button in the top of the html page, pressing "Enter" close the form
+ With the multiple case we hold with this modal, its the simplier way to do this
+ without breaking the code or complexify it too much. */}
       </div>
     </form>
   );

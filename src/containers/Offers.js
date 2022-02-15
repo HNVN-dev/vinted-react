@@ -29,7 +29,7 @@ const Offer = () => {
       {data.offers.map((elem) => {
         return (
           elem.product_details[1]["TAILLE"] &&
-          /* we only wants to return elem with TAILLE property
+          /* we only wants to return elem with TAILLE name.
              Some elem doesn't have it and we wants a harmonious feed */
 
           /* It works with elem.owner.account.avatar too
@@ -47,7 +47,6 @@ const Offer = () => {
                 </div>
               </div>
               <Link key={elem._id} to={`/offer/${elem._id}`}>
-                {console.log(elem)}
                 <img
                   className="offer-product-img"
                   src={elem.product_image.secure_url}

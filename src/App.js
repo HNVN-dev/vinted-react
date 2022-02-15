@@ -3,9 +3,6 @@ import "./App.css";
 import { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-import { loadStripe } from "@stripe/stripe-js";
-import { Elements } from "@stripe/react-stripe-js";
-import CheckoutForm from "./components/CheckoutForm";
 import Cookies from "js-cookie";
 
 import Header from "./components/Header";
@@ -31,21 +28,13 @@ function App() {
     }
 
     setToken(token);
-
-    // Stripe
-
-    const stripePromise = loadStripe("pk_test_5z9rSB8XwuAOihoBixCMfL6X");
-
-    <Elements stripe={stripePromise}>
-      <CheckoutForm />
-    </Elements>;
   };
   return (
     <Router>
       <Header setUser={setUser} token={token} setToken={setToken} />
       <Routes>
         <Route path="*" element={<NotFound />} />
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Home token={token} />} />
         <Route path="/offer/:id" element={<Offer />} />
         <Route path="/login" element={<Login setUser={setUser} />} />
         <Route path="/signup" element={<Signup setUser={setUser} />} />

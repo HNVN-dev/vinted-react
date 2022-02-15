@@ -24,25 +24,37 @@ const Logged = ({ setToken, isOpen, setIsOpen }) => {
           onClick={() => setIsOpen(!isOpen)}
         />
         <SignupOrLoginModal open={isOpen}>
-          <div className="connexion-modal">
-            <div className="menu-items">
-              <span className="my-account">Mon compte</span>
-              <ul>
-                <li>Mon profil</li>
-                <li>Mes paramètres</li>
-                <li>Personnalisation</li>
-                <li>Mon porte-monnaie</li>
-                <li>Invite tes amis</li>
-                <li
-                  className="disconnect-btn"
-                  onClick={() => {
-                    setToken(Cookies.remove("userToken"));
-                    setIsOpen(false);
-                  }}
-                >
-                  Se déconnecter
-                </li>
-              </ul>
+          <div
+            className="logged-overlay"
+            onClick={() => {
+              setIsOpen(false);
+            }}
+          >
+            <div
+              className="connexion-modal"
+              onClick={(event) => {
+                event.stopPropagation();
+              }}
+            >
+              <div className="menu-items">
+                <span className="my-account">Mon compte</span>
+                <ul>
+                  <li>Mon profil</li>
+                  <li>Mes paramètres</li>
+                  <li>Personnalisation</li>
+                  <li>Mon porte-monnaie</li>
+                  <li>Invite tes amis</li>
+                  <li
+                    className="disconnect-btn"
+                    onClick={() => {
+                      setToken(Cookies.remove("userToken"));
+                      setIsOpen(false);
+                    }}
+                  >
+                    Se déconnecter
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </SignupOrLoginModal>

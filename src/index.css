@@ -1,0 +1,10 @@
+@font-face {
+  font-family: "MaisonNeueWEB-Book";
+  src: local("MaisonNeueWEB-Book"),
+    url(./assets/fonts/MaisonNeueWEB-Book.ttf) format("truetype");
+}
+@font-face {
+  font-family: "MaisonNeueWEB-Medium";
+  src: local("MaisonNeueWEB-Medium"),
+    url(./assets/fonts/MaisonNeueWEB-Medium.ttf) format("truetype");
+}

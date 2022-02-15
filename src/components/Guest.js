@@ -11,8 +11,8 @@ const Guest = ({
   isOpen,
   setIsOpen,
   openOrClose,
-  isLogin,
-  setIsLogin,
+  wantToLog,
+  setWantToLog,
   setUser,
   token,
 }) => {
@@ -23,26 +23,22 @@ const Guest = ({
   // If finaly he doesn't have an account & click "s'inscrire" => Previous
 
   const closeAndClose = () => {
+    // Close the modal if clicked outside
+    // Reset the modal's state
+
     openOrClose();
     setNextStepAcc(false);
-    setIsLogin(false);
-  };
-
-  const closeAndOpen = () => {
-    openLoginModal();
+    setWantToLog(false);
   };
 
   const openLoginModal = () => {
-    setIsLogin(true);
-  };
-
-  const closeLoginModal = () => {
-    setIsOpen(false);
-    setIsLogin(false);
-    setNextStepAcc(false);
+    // Where the user can click if he got an email to log
+    setWantToLog(true);
   };
 
   const nextStep = () => {
+    // Hold the modal comportment
+
     if (!nextStepAcc) {
       setNextStepAcc(true);
     } else {
@@ -62,7 +58,7 @@ const Guest = ({
             onClick={(event) => {
               event.stopPropagation();
               // stop openOrClose propagation, so clicking in the container won't close him
-              // only clicking outside or in the close btn will.
+              // only clicking outside or in the close btn will, with closeAndClose.
             }}
           >
             <button className="close-btn" onClick={closeAndClose}>
@@ -123,16 +119,16 @@ const Guest = ({
               <div className="signup-or-alrealdy">
                 <div className="login-with-email">
                   Ou connecte-toi avec
-                  <span className="signup-email-link" onClick={closeAndOpen}>
+                  <span className="signup-email-link" onClick={openLoginModal}>
                     E-mail
                   </span>
                 </div>
-                {isLogin && (
+                {wantToLog && (
                   <LoginModal
-                    isLogin={isLogin}
-                    setIsLogin={setIsLogin}
+                    wantToLog={wantToLog}
+                    setWantToLog={setWantToLog}
                     openLoginModal={openLoginModal}
-                    closeLoginModal={closeLoginModal}
+                    closeAndClose={closeAndClose}
                     setUser={setUser}
                     token={token}
                   />

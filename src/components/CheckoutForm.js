@@ -4,10 +4,18 @@ import { useStripe, useElements, CardElement } from "@stripe/react-stripe-js";
 import axios from "axios";
 
 const CheckoutForm = ({ product_name, product_price }) => {
+  // Called in Payment.js, props passed in the same file.
+  // Payment.js is in SRC. There's the Payment page container to modify marging/padding if needed.
+
+  // Setup Stripe
+
   const stripe = useStripe();
   const elements = useElements();
+
+  // 0.8 and 0.4 is the shipping fees and the protection buyer fees
+  // We can make it dynamic later.
+
   const totalPrice = (product_price + 0.8 + 0.4).toFixed();
-  console.log(totalPrice * 100);
 
   const [completed, setCompleted] = useState(false);
 
@@ -16,15 +24,12 @@ const CheckoutForm = ({ product_name, product_price }) => {
       event.preventDefault();
 
       const cardElement = elements.getElement(CardElement);
-
       const stripeResponse = await stripe.createToken(cardElement, {
         name: "userId",
       });
       console.log(stripeResponse);
       const stripeToken = stripeResponse.token.id;
-      // Une fois le token reçu depuis l'API Stripe
-      // Requête vers notre serveur
-      // On envoie le token reçu depuis l'API Stripe
+
       const response = await axios.post(
         " https://lereacteur-vinted-api.herokuapp.com/payment",
         {

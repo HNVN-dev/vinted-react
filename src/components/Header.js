@@ -9,7 +9,7 @@ const Header = ({ token, setToken, setUser }) => {
   // <Header /> is actually in app.js, here you can pass props.
 
   const [isOpen, setIsOpen] = useState(false);
-  const [isLogin, setIsLogin] = useState(false);
+  const [wantToLog, setWantToLog] = useState(false);
 
   const openOrClose = () => {
     if (isOpen) {
@@ -44,8 +44,8 @@ const Header = ({ token, setToken, setUser }) => {
                 isOpen={isOpen}
                 setIsOpen={setIsOpen}
                 openOrClose={openOrClose}
-                isLogin={isLogin}
-                setIsLogin={setIsLogin}
+                wantToLog={wantToLog}
+                setWantToLog={setWantToLog}
                 setUser={setUser}
                 token={token}
               />
