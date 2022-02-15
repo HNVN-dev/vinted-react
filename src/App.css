@@ -17,7 +17,6 @@
 
 body {
   position: relative;
-  max-width: 1440px;
   height: 100%;
   min-height: 95vh;
 }
@@ -232,7 +231,6 @@ li {
   display: flex;
   flex-wrap: wrap;
   width: 60%;
-  max-width: 1440px;
   margin: 20px auto;
   gap: 15px;
 }
@@ -935,7 +933,7 @@ input[type="checkbox"] {
   border: none;
   border-radius: 3px;
   color: var(--mainWhite);
-  font-size: 1.2rem;
+  font-size: 1rem;
   height: 45px;
   width: 100%;
 }
