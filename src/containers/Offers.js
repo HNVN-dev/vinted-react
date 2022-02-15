@@ -1,8 +1,9 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import PriceRange from "../components/PriceRange";
 
-const Offer = () => {
+const Offers = () => {
   const [data, setData] = useState({});
   const [isLoading, setIsLoading] = useState(true);
 
@@ -23,7 +24,7 @@ const Offer = () => {
   }, []);
 
   return isLoading ? (
-    <span>En cours de chargement... </span>
+    <span></span>
   ) : (
     <section className="offers-container">
       {data.offers.map((elem) => {
@@ -73,4 +74,4 @@ const Offer = () => {
   );
 };
 
-export default Offer;
+export default Offers;

@@ -561,7 +561,8 @@ input[type="checkbox"] {
 
 .signin-signup-container,
 .login-form-container,
-.login-form-container-nofix {
+.login-form-container-nofix,
+.success-container {
   position: fixed;
   top: 50%;
   left: 50%;
@@ -881,4 +882,58 @@ input[type="checkbox"] {
   margin-bottom: 20px;
 }
 
-/* publish container */
+/* Filter function */
+
+.filter-search-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 60px;
+}
+
+.filter-container {
+  margin: 30px 0;
+  width: 100%;
+}
+
+/* Success container */
+
+.success-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
+  width: 600px;
+  height: 350px;
+  z-index: 0;
+}
+
+.success-wrapper {
+  text-align: center;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.success-container img {
+  width: 75px;
+  margin-bottom: 20px;
+}
+
+.success-container h2 {
+  margin-bottom: 20px;
+}
+.success-container p {
+  color: var(--lightGrey);
+  margin-bottom: 40px;
+}
+.success-container button {
+  background-color: var(--mainTurquoise);
+  border: none;
+  border-radius: 3px;
+  color: var(--mainWhite);
+  font-size: 1.2rem;
+  height: 45px;
+  width: 100%;
+}

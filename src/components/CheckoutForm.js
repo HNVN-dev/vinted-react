@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useStripe, useElements, CardElement } from "@stripe/react-stripe-js";
+import { Navigate } from "react-router-dom";
 
 import axios from "axios";
 
@@ -89,7 +90,7 @@ const CheckoutForm = ({ product_name, product_price }) => {
           </button>
         </form>
       ) : (
-        <span>Paiement effectué ! </span>
+        <Navigate to="/success" />
       )}
     </div>
   );

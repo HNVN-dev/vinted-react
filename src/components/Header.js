@@ -4,12 +4,16 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import Guest from "./Guest";
 import Logged from "./Logged";
+import PriceRange from "./PriceRange";
 
 const Header = ({ token, setToken, setUser }) => {
   // <Header /> is actually in app.js, here you can pass props.
 
   const [isOpen, setIsOpen] = useState(false);
+  // State for the login modal SignupOrLoginModal.js
+
   const [wantToLog, setWantToLog] = useState(false);
+  // State for the modal comportment
 
   const openOrClose = () => {
     if (isOpen) {

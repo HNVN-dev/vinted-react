@@ -14,6 +14,7 @@ import Publish from "./containers/Publish";
 import Login from "./containers/Login";
 import NotFound from "./containers/NotFound";
 import Payment from "./Payment";
+import Success from "./containers/Success";
 
 function App() {
   const [token, setToken] = useState(Cookies.get("userToken") || null);
@@ -40,6 +41,7 @@ function App() {
         <Route path="/signup" element={<Signup setUser={setUser} />} />
         <Route path={"/publish"} element={<Publish token={token} />} />
         <Route path="/payment" element={<Payment token={token} />} />
+        <Route path="/success" element={<Success />} />
       </Routes>
       <Footer />
     </Router>
