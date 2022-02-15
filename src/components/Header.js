@@ -4,7 +4,6 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import Guest from "./Guest";
 import Logged from "./Logged";
-import PriceRange from "./PriceRange";
 
 const Header = ({ token, setToken, setUser }) => {
   // <Header /> is actually in app.js, here you can pass props.

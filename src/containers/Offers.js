@@ -1,7 +1,6 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import PriceRange from "../components/PriceRange";
 
 const Offers = () => {
   const [data, setData] = useState({});
