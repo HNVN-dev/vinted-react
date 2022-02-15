@@ -45,7 +45,7 @@ const Login = ({ setUser }) => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <div className="login-form-container">
+      <div className="login-form-container-nofix">
         <h1>Se connecter</h1>
         <span className="error-message">{errorMessage}</span>
         <input

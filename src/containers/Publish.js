@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 import { useState } from "react";
 
 const Publish = ({ token }) => {
@@ -14,7 +14,9 @@ const Publish = ({ token }) => {
   const [price, setPrice] = useState(0);
   const [exchange, setExchange] = useState(false);
 
-  const navigate = useNavigate();
+  /* const navigate = useNavigate(); */
+  // useNavigate will works only in my back end, need to fix something
+
   console.log(token);
   const handleSubmit = async (event) => {
     try {
@@ -38,20 +40,19 @@ const Publish = ({ token }) => {
         offerData,
         {
           headers: {
-            autorization: `Bearer ${token}`,
+            authorization: `Bearer ${token}`,
             "Content-Type": "multipart/form-data",
           },
         }
       );
-      navigate("/");
-      response.data && navigate(`/offer${response.data._id}`);
+      /* response.data && navigate(`/offer${response.data._id}`); */
       alert(JSON.stringify(response.data));
       console.log(response.data);
     } catch (error) {
       console.log(error.message);
     }
   };
-  return (
+  return token ? (
     <div className="publish-container">
       <h2>Vends ton article</h2>
       <form onSubmit={handleSubmit}>
@@ -80,8 +81,8 @@ const Publish = ({ token }) => {
             <h4>Décris ton article</h4>
             <textarea
               type="text"
-              id="publish-article-description"
-              name="publish-article-description"
+              id="publish-description"
+              name="publish-description"
               placeholder="ex: porté quelques fois, taille correctement "
               rows={5}
               value={description}
@@ -90,13 +91,13 @@ const Publish = ({ token }) => {
           </div>
         </div>
 
-        <div className="brand-to-location-container">
+        <div className="brand-to-cityO-container">
           <div className="publish-brand">
             <h4>Marque</h4>
             <input
               type="text"
-              id="article-brand"
-              name="article-brand"
+              id="publish-brand"
+              name="publish-brand"
               placeholder="ex: Gucci"
               value={brand}
               onChange={(event) => setBrand(event.target.value)}
@@ -117,8 +118,8 @@ const Publish = ({ token }) => {
             <h4>Couleur</h4>
             <input
               type="text"
-              id="article-color"
-              name="article-color"
+              id="publish-color"
+              name="publish-color"
               placeholder="ex: jaune et or"
               value={color}
               onChange={(event) => setColor(event.target.value)}
@@ -128,8 +129,8 @@ const Publish = ({ token }) => {
             <h4>Etat</h4>
             <input
               type="text"
-              id="article-condition"
-              name="article-condition"
+              id="publish-condition"
+              name="publish-condition"
               placeholder="ex: Neuf sans étiquette"
               value={condition}
               onChange={(event) => setCondition(event.target.value)}
@@ -139,8 +140,8 @@ const Publish = ({ token }) => {
             <h4>Lieu</h4>
             <input
               type="text"
-              id="from-City"
-              name="from-City"
+              id="publish-city"
+              name="publish-city"
               placeholder="ex: Paris"
               value={city}
               onChange={(event) => setCity(event.target.value)}
@@ -153,8 +154,8 @@ const Publish = ({ token }) => {
           <div>
             <input
               type="text"
-              id="article-price"
-              name="article-price"
+              id="publish-price"
+              name="publish-price"
               placeholder="0,00€"
               value={price}
               onChange={(event) => setPrice(event.target.value)}
@@ -162,8 +163,8 @@ const Publish = ({ token }) => {
             <div>
               <input
                 type="checkbox"
-                id="exchange"
-                name="exchange"
+                id="publish-exchange"
+                name="publish-exchange"
                 onChange={(event) => setExchange(event.target.checked)}
               />
               <span>Je suis intéressé(e) par les échanges</span>
@@ -174,6 +175,8 @@ const Publish = ({ token }) => {
         <button type="submit">Ajouter</button>
       </form>
     </div>
+  ) : (
+    <Navigate to="/login" />
   );
 };
 

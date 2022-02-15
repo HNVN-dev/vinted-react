@@ -9,13 +9,14 @@
 body {
   position: relative;
   height: 100%;
-  min-height: 100vh;
+  min-height: 95vh;
 }
 
 footer {
   width: 60%;
   margin: 0 auto;
   border-top: 1px solid #dadada;
+  background: rgb(82, 184, 121);
   position: absolute;
   top: 100%;
   left: 0;
@@ -59,6 +60,12 @@ a:active {
 button,
 input[type="submit"] {
   cursor: pointer;
+}
+
+input[type="submit"]:hover,
+button:hover,
+.checkout-atc:hover {
+  opacity: 0.9;
 }
 
 /* general settings */
@@ -254,7 +261,7 @@ footer ul li {
 
 main {
   background: rgb(218, 218, 218);
-  height: 100vh;
+  height: 95vh;
 }
 
 .product-page-container {
@@ -437,6 +444,8 @@ input[type="checkbox"] {
   color: #09b1ba;
   cursor: pointer;
 }
+.password-forgotten:hover,
+.a-problem:hover,
 .already-registered:hover {
   text-decoration: underline;
 }
@@ -494,7 +503,8 @@ input[type="checkbox"] {
 }
 
 .signin-signup-container,
-.login-form-container {
+.login-form-container,
+.login-form-container-nofix {
   position: fixed;
   top: 50%;
   left: 50%;
@@ -503,15 +513,23 @@ input[type="checkbox"] {
   padding: 5px 20px;
   width: 370px;
   z-index: 9999;
+  border: 1px solid #ebebeb;
 }
 
-.login-form-container {
+.login-form-container,
+.login-form-container-nofix {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 30px 20px;
-  box-shadow: 0px 0px 10px 1px #b6b6b6;
+}
+
+.login-form-container-nofix {
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  z-index: 0;
 }
 
 .signin-signup-overlay {
@@ -535,7 +553,7 @@ input[type="checkbox"] {
   padding: 10px !important;
   margin-left: 310px !important;
   border-radius: 1000px !important;
-  background-color: #f9f9f9;
+  background-color: white;
   font-size: 1.2rem;
   margin-bottom: 10px;
 }
@@ -590,4 +608,88 @@ input[type="checkbox"] {
 .login-with-link:hover,
 .signup-email-line:hover {
   text-decoration: underline;
+}
+
+/* Publish */
+
+.publish-container {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+/* Checkout : Checkoutform */
+
+.payment-container {
+  padding-top: 40px;
+}
+
+.checkout-container {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  padding: 25px;
+  width: 700px;
+  border-radius: 3px;
+  background-color: white;
+}
+
+.checkout-container h2 {
+  color: rgb(189, 189, 189);
+  font-size: 0.9rem;
+  margin-bottom: 40px;
+}
+
+.checkout-payment-resume {
+  color: gray;
+  font-size: 1rem;
+  margin-bottom: 80px;
+}
+
+.checkout-order,
+.checkout-protection-buyer-fees,
+.checkout-shipping-fees,
+.checkout-total {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.checkout-total {
+  margin-bottom: 40px;
+}
+
+.checkout-paragraph {
+  margin-bottom: 20px;
+}
+
+.card-element-wrapper {
+  width: 90%;
+  margin: 40px auto;
+}
+
+.checkout-atc {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 1.2rem;
+  background-color: rgb(82, 184, 121);
+  color: #f9f9f9;
+  border: none;
+  border-radius: 3px;
+}
+
+/* Not found */
+
+.not-found-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.not-found-container img {
+  margin-top: 20px;
+}
+.not-found-container h2 {
+  margin-bottom: 20px;
 }

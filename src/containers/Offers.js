@@ -29,10 +29,13 @@ const Offer = () => {
       {data.offers.map((elem) => {
         return (
           elem.product_details[1]["TAILLE"] &&
-          elem.owner.account.avatar?.secure_url && (
-            /* we only wants to return elem with TAILLE property
+          /* we only wants to return elem with TAILLE property
              Some elem doesn't have it and we wants a harmonious feed */
 
+          /* It works with elem.owner.account.avatar too
+           maybe we need to switch to hold more cases (?) */
+
+          elem.owner.account.avatar?.secure_url && (
             <div key={elem._id} className="offer-container">
               <div className="user-offer">
                 <img
