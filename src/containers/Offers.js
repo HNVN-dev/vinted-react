@@ -46,13 +46,15 @@ const Offers = () => {
                   {elem.owner.account.username}
                 </div>
               </div>
-              <Link key={elem._id} to={`/offer/${elem._id}`}>
-                <img
-                  className="offer-product-img"
-                  src={elem.product_image.secure_url}
-                  alt={`${elem.product_name}`}
-                />
-              </Link>
+              <div className="offer-img-product-container">
+                <Link key={elem._id} to={`/offer/${elem._id}`}>
+                  <img
+                    className="offer-product-img"
+                    src={elem.product_image.secure_url}
+                    alt={`${elem.product_name}`}
+                  />
+                </Link>
+              </div>
               <div className="offer-product-infos">
                 <div className="offer-product-price">
                   {`${Number(elem.product_price).toFixed(2).replace(".", ",")}`}

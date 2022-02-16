@@ -3,12 +3,10 @@ import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
 import CheckoutForm from "./components/CheckoutForm";
 
-const stripePromise = loadStripe("pk_test_5z9rSB8XwuAOihoBixCMfL6X");
-
 const Payment = ({ token }) => {
   // Route page, called in App.js
   // You can find CheckoutForm on component folder
-
+  const stripePromise = loadStripe("pk_test_5z9rSB8XwuAOihoBixCMfL6X");
   const location = useLocation();
   const { product_name, product_price } = location.state;
 
