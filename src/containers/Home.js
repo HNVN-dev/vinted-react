@@ -7,7 +7,7 @@ const Home = ({ token }) => {
     <>
       {!token && (
         <section className="hero-banner">
-          <img src={herobanner} alt="" />
+          {/* <img src={herobanner} alt="" /> */}
           <div className="hero-card">
             <h1>Prêt à faire du tri dans vos placards ?</h1>
             <Link to="/publish">
