@@ -29,8 +29,7 @@ main {
 /* Footer */
 
 footer {
-  /* width: 60%; */
-  width: 1440px;
+  width: 60%;
   margin: 0 auto;
   border-top: 1px solid #dadada;
   position: absolute;
@@ -109,8 +108,9 @@ li {
 .header-wrapper {
   display: flex;
   justify-content: space-between;
-  width: 1440px;
-  /* width: 60%; */
+  max-width: 1440px;
+  width: 60%;
+
   margin: 0 auto;
 }
 
@@ -128,8 +128,7 @@ li {
 
 .primary-nav,
 .secondary-nav {
-  width: 1440px;
-  /* width: 100%; */
+  width: 100%;
   border-bottom: 1px solid var(--border);
 }
 
@@ -191,10 +190,8 @@ li {
 /* hero banner */
 
 .hero-banner img {
-  /* width: 100%; */
-  width: 1440px;
+  width: 100%;
   height: 60vh;
-  margin: 0 auto;
   object-fit: cover;
   position: relative;
 }
@@ -234,8 +231,8 @@ li {
 .offers-container {
   display: flex;
   flex-wrap: wrap;
-  /* width: 60%; */
-  width: 1440px;
+  width: 60%;
+  flex: 4;
   margin: 20px auto;
   gap: 15px;
 }
@@ -243,6 +240,8 @@ li {
 .offer-container {
   margin-bottom: 20px;
   cursor: pointer;
+  flex: calc(25% - 15px);
+  max-width: 25%;
 }
 
 .user-offer {
@@ -259,7 +258,7 @@ li {
 }
 
 .offer-product-img {
-  width: 220px;
+  width: 100%;
   height: 360px;
 }
 
@@ -285,8 +284,7 @@ li {
 .product-page-container {
   display: flex;
   justify-content: space-between;
-  /* width: 80%; */
-  width: 1440px;
+  width: 80%;
   margin: 0 auto;
 }
 
@@ -504,7 +502,7 @@ input[type="checkbox"] {
 .connexion-modal {
   position: absolute;
   top: 60px;
-  right: 29.5%;
+  right: 28.5%;
   width: 220px;
   padding: 10px 15px;
   background-color: var(--mainWhite);
@@ -679,8 +677,7 @@ input[type="checkbox"] {
 .publish-container {
   margin: 0 auto;
   background-color: var(--mainWhite);
-  /* width: 60%; */
-  width: 1440px;
+  width: 60%;
   height: 100%;
 }
 
@@ -891,14 +888,14 @@ input[type="checkbox"] {
 
 /* Filter function */
 
-/* .filter-search-wrapper {
+.filter-search-wrapper {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   width: 100%;
   height: 60px;
-} */
+}
 
 .filter-container {
   margin: 30px 0;
