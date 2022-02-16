@@ -1,6 +1,5 @@
 import Offer from "./Offers";
 import { Link } from "react-router-dom";
-import herobanner from "../assets/img/vinted-home-baner-wide.jpeg";
 
 const Home = ({ token }) => {
   return (
