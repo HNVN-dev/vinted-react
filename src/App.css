@@ -29,7 +29,8 @@ main {
 /* Footer */
 
 footer {
-  width: 60%;
+  /* width: 60%; */
+  width: 1280px;
   margin: 0 auto;
   border-top: 1px solid #dadada;
   position: absolute;
@@ -108,8 +109,8 @@ li {
 .header-wrapper {
   display: flex;
   justify-content: space-between;
-  max-width: 1440px;
-  width: 60%;
+  width: 1280px;
+  /* width: 60%; */
 
   margin: 0 auto;
 }
@@ -128,6 +129,7 @@ li {
 
 .primary-nav,
 .secondary-nav {
+  max-width: 1280px;
   width: 100%;
   border-bottom: 1px solid var(--border);
 }
@@ -191,6 +193,7 @@ li {
 
 .hero-banner img {
   width: 100%;
+  max-width: 1280px;
   height: 60vh;
   object-fit: cover;
   position: relative;
@@ -231,6 +234,7 @@ li {
 .offers-container {
   display: flex;
   flex-wrap: wrap;
+  max-width: 1280px;
   width: 60%;
   flex: 4;
   margin: 20px auto;
@@ -284,7 +288,8 @@ li {
 .product-page-container {
   display: flex;
   justify-content: space-between;
-  width: 80%;
+  /* width: 80%; */
+  width: 1280px;
   margin: 0 auto;
 }
 
