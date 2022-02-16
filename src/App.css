@@ -240,6 +240,7 @@ li {
   margin-bottom: 20px;
   cursor: pointer;
   width: calc(20% - 15px);
+  min-width: 200px;
 }
 
 .offer-product-img {
